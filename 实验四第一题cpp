@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int a[10], distinct[10]={0}, count = 0;
+	for (int i = 0; i < 10; i++) {
+		cin >> a[i];
+		bool isnew = true;
+		for (int j = 0; j < count; j++) {
+			if (a[i] == distinct[j]) {
+				isnew = false;
+				break;
+			}
+		}
+		if (isnew) {
+			distinct[count++] = a[i];
+		}
+	}
+	for (int i = 0; i < count; i++) {
+		cout << distinct[i]<<" ";
+	}
+	
+}
